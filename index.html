@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancer website using html , css and javascript</title>
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        nav{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 10%;
+            border-bottom: 1px solid #0b0a0a;
+            z-index: 10;
+        }
+        nav .logo{
+            width: 220px;
+            cursor: pointer;
+            filter: contrast(200%);
+        }
+        nav ul li{
+            list-style: none;
+            display: inline-block;
+            margin: 10px 20px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .nav-btn{
+            background: #000000;
+            color: #bca8a8;
+            font-size: 16px;
+            padding: 15px 25px;
+            border: 0;
+            outline: 0;
+            border-radius: 40px;
+            cursor: pointer;
+
+        }
+        .nav-btn img{
+            width: 16px;
+            margin-left: 8px;
+
+        }
+        .header{
+            width: 100%;
+            min-height: 100vh;
+            background: linear-gradient(#eefff9 0%,#ffccc1 49%, #dcdbff 100%);
+            padding: 0 10%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .header h1{
+            margin-top: 100px;
+            font-size: 10vw;
+            line-height: 11vw;    
+        }
+        .btn-container{
+            margin: 20px 0;
+        }
+        .header button{
+            border: 0;
+            outline: 0;
+            display: inline-flex;
+            align-items: center;
+            font-size: 18px;
+            margin-right: 20px;
+            cursor: pointer;
+
+        }
+        .btn-dark{
+            background: #000;
+            color: #fff;
+            padding: 10px 10px 10px 30px;
+            border-radius: 40px;
+
+        }
+        .btn-dark img{
+            width: 40px;
+            background: #fff;
+            border-radius: 50%;
+            padding: 10px;
+            margin-left: 30px;
+        }
+        .btn-light{
+        background: transparent;
+        text-decoration: underline;
+        }
+        .btn-light img{
+            width: 20px;
+            margin-left: 10px;
+        }
+        .header p{
+            max-width: 360px;
+            font-weight: 500;
+        }
+        .user-img{
+            width: 80%;
+            max-width: 500px;
+            position: absolute;
+            right: 13%;
+            bottom: 0;
+            filter: contrast(150%);
+        }
+        .header h1 span{
+            background: linear-gradient(#000, #000);
+            background-repeat: no-repeat;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            background-size: 0%;
+        }
+        .header h1 span:first-child{
+            animation: textcolor1 2s linear infinite alternate;
+        }
+        .header h1 span:first-child{
+            animation: textcolor2 2s linear infinite alternate;
+        }
+        @keyframes textcolor1 {
+                0%{
+                    background-size: 0%;
+                }
+                40%{
+                    background-size: 100%;
+                }
+                100%{
+                    background-size: 100%;
+                }
+        }
+        @keyframes textcolor2 {
+                0%{
+                    background-size: 0%;
+                }
+                40%{
+                    background-size: 100%;
+                }
+                100%{
+                    background-size: 100%;
+                }
+        }
+        .menu-icon{
+            display: none;
+
+        }
+        @media only screen and (max-width: 600px){
+            nav ul{
+                position: absolute;
+                width: 100%;
+                background: #000;
+                color: #fff;
+                left: 0;
+                top: 100%;
+                text-align: center;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.5s;
+            }
+            .nav-btn{
+                display: none;
+            }
+            nav .logo{
+                width: 150px;
+            }
+            nav ul li{
+                margin: 10px;
+                font-size: 14px;
+            }
+            .menu-icon{
+                display: block;
+                width: 30px;
+
+            }
+            .show-menu{
+                max-height: 60px;
+
+            }
+        }
+        @media only screen and (max-width: 600px){
+            .header{
+                min-height: auto;
+                padding: 0;
+            }
+            .user-img{
+                width: 100%;
+                right: auto;
+                position: relative;
+                margin-top: 100px;
+            }
+            .header-content{
+                position: absolute;
+                bottom: 0;
+                padding: 0 10%;
+                z-index: 2;
+                padding-bottom: 40px;
+                background: linear-gradient(transparent);
+            }
+            .btn-container{
+                margin: 5px 0;
+
+            }
+            .header button{
+                font-size: 14px;
+                margin-right: 10px;
+            }
+            .btn-dark{
+                padding: 7px 7px 7px 20px;
+                margin-bottom: 10px;
+            }
+            .btn-dark img{
+                width: 30px;
+                padding: 5px;
+                margin-left: 15px;
+
+            }
+            .btn-light img{
+                width: 12px;
+                margin-left: 10px;
+            }
+            .header h1{
+                font-size: 70px;
+                line-height: 60px;
+                margin-bottom: 20px;
+            }
+        }
+
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="logo.png" alt="" class="logo">
+        <ul id="menu-links">
+            <li>Home</li>
+            <li>Services</li>
+            <li>Projects</li>
+            <li>About Us</li>
+        </ul>
+        <button class="nav-btn">Get Started <img src="arrow-white.png" alt=""></button>
+        <img src="menu.png" alt="" class="menu-icon" onclick="toogleMenu()">
+    </nav>
+    <div class="header">
+        <div class="header-content">
+        <h1><span>FREE<br>LANCER</span></h1>
+        <div class="btn-container">
+        <button class="btn-dark">Request Call Back <img src="phone.png" alt=""></button>
+        <button class="btn-light">Know More <img src="arrow-black.png" alt=""></button>
+        </div>
+        </div>
+    <p>Passionate Web Developer with 2+ years of experience.</p>
+    <img src="user.png" alt="" class="user-img">
+    </div>
+    <script>
+        let navbar = document.querySelector('nav');
+        let menuLinks = document.getElementById("menu-links");
+        function toogleMenu(){
+            menuLinks.classList.toggle('show-menu');
+        }
+        window.onscroll=function(){
+            if(window.scrollY > 0){
+                navbar.style.background = '#eefff9';
+            }
+            else{
+                navbar.style.background = 'transparent';
+            }
+        }
+    </script>
+</body>
+
+</html>
